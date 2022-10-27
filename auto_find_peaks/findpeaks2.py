@@ -33,8 +33,11 @@ if p_peaksmax1 > p_peaksmax2:
     hg_max = p_peaksmax1 + (p_peaksmax1 - p_peaksmax2)
 elif p_peaksmax1 < p_peaksmax2:
     hg_max = p_peaksmax2 + (p_peaksmax2 - p_peaksmax1)
-    
-plt.plot(hg_max,0, "k |") #k = black
+
+centerlinex = [hg_max] * 200    
+centerliney = np.arange(0,200)    
+
+plt.plot(centerlinex, centerliney, "--", color = "black") #k = black
 
 peak = peaks.tolist()
 hg_peak = []
@@ -64,6 +67,8 @@ for i in range(len(hg_peak1)):
     if i > 0 and i < 4:
         hg_peak2.append(hg_peak1[i])
 		
-plt.plot(hg_peak2, y_smooth[hg_peak2], 'r x', label = "Peak")
+plt.plot(hg_peak2, y_smooth[hg_peak2], 'r x', label = "hg-Peak")
+
+
 plt.legend()	
 plt.show()
