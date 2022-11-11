@@ -44,7 +44,6 @@ centerliney = np.arange(0,centerline_height)
 
 plt.plot(centerlinex, centerliney, "--", color = "black") #k = black
 
-peak = peaks.tolist()
 hg_peak = []
 ag_peak = []
 
